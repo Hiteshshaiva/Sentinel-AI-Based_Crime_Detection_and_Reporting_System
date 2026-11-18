@@ -10,10 +10,13 @@ export interface CrimeReport {
   timestamp: string;
 }
 
-const API = "http://localhost:5000/reports";
+const API = "/api/reports";
 
 export async function getReports(): Promise<CrimeReport[]> {
   const res = await fetch(API);
+  if (!res.ok) {
+    throw new Error("Failed to load reports");
+  }
   return await res.json();
 }
 
