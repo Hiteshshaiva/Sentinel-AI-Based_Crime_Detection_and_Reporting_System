@@ -1,0 +1,15 @@
+[build]
+  base = "vigil-voice-map-main/frontend"
+  command = "npm run build"
+  publish = "dist"
+
+[dev]
+  command = "npm --prefix vigil-voice-map-main/frontend run dev"
+  targetPort = 8080
+  framework = "#custom"
+
+# Single-page app: serve index.html for client-side routes like /map or /admin
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

@@ -16,7 +16,7 @@ export function useCrimeReports() {
   useEffect(() => {
     loadReports();
 
-    const interval = setInterval(loadReports, 1000);
+    const interval = setInterval(loadReports, 5000);
 
     return () => clearInterval(interval);
   }, []);
